@@ -7,9 +7,12 @@
     = render 'layouts/navigation'
 
 .row-fluid
-  .span9
-    = render 'table'
-  .span3
+  .span8
+    #calendar{data: { path: installations_path}}
+  .span4
+    %h4= t '.teams'
+    = render @teams
+
     %h4= t '.installations_to_plan'
     %ul.nav.nav-tabs.nav-stacked
       - @installations_to_plan.each do |i|
@@ -17,7 +20,7 @@
           = link_to "#" do
             = i.description
             .label.label-warning= i.project.try(:name)
-            .label.label-info= i.team.try(:name)
+            = render i.team
     %h4= t '.open_projects'
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|

@@ -1,10 +1,10 @@
-t1 = Team.create(name: "Agran 1")
-t2 = Team.create(name: "Agran 2")
-t3 = Team.create(name: "Agran 3")
-t4 = Team.create(name: "PPL")
-t5 = Team.create(name: "JPC 1")
-t6 = Team.create(name: "JPC 2")
-t7 = Team.create(name: "Arifi")
+t1 = Team.create(name: "Agran 1", color: "#7F71D0" )
+t2 = Team.create(name: "Agran 2", color: "#A298DC" )
+t3 = Team.create(name: "Agran 3", color: "#C4BEE9" )
+t4 = Team.create(name: "PPL", color: "#3D6ABC" )
+t5 = Team.create(name: "JPC 1", color: "#56C759" )
+t6 = Team.create(name: "JPC 2", color: "#7CD47F" )
+t7 = Team.create(name: "Arifi", color: "#D85C54" )
 
 p1 = Project.create name: "Villa Barroso, Denges", planned: 5, state: :open, delivery_on: 3.weeks.ago.to_date
 p2 = Project.create name: "Villa Ding, Romainmotier", planned: 3, state: :closed, delivery_on: 6.weeks.ago.to_date
@@ -36,6 +36,12 @@ t2.installations.create do |i|
   i.end_on = i.start_on + 3.days
   i.description = "Montage"
   i.project = p3
+end
+
+t4.installations.create do |i|
+  i.start_on = 2.days.from_now.to_date
+  i.end_on = i.start_on
+  i.description = "Montage de la porte du sous-sol / Villa Orny, Sommer"
 end
 
 # installation a planifier = sans dates
