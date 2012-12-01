@@ -1,8 +1,7 @@
 jQuery ($) ->
-  date = new Date()
-  d = date.getDate()
-  m = date.getMonth()
-  y = date.getFullYear()
+  $('#draggable li').draggable
+    revert: true
+    revertDuration: 0
 
   $('#calendar').fullCalendar
     header:
@@ -20,3 +19,16 @@ jQuery ($) ->
 
     eventResize: (event, delta) ->
       $.post '/installations/resize', {id: event.id, days: delta}
+
+    droppable: true
+    drop: (date, allDay) ->
+      event =
+        id: $(@).data('event_id')
+        title: $(@).data('event_title')
+        allDay: allDay
+        start: date
+        color: $(@).data('event_color')
+
+      $.post '/installations/drop', {id: event.id, date: date}
+      $('#calendar').fullCalendar('renderEvent', event)
+      $(@).remove()

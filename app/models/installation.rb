@@ -33,4 +33,12 @@ class Installation
     self.save
     self
   end
+
+  def drop(date)
+    self.start_on = date.to_date
+    self.end_on = start_on
+    self.save
+    self
+  end
+
 end

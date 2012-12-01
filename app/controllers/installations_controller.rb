@@ -1,10 +1,9 @@
 class InstallationsController < ApplicationController
   respond_to :json
   def index
-    respond_with Installation.where(
-      :start_on.gte => Time.at(params[:start].to_i),
-      :end_on.lte => Time.at(params[:end].to_i)
-    )
+    start_on = Time.at(params[:start].to_i).to_date - 1.day
+    end_on = Time.at(params[:end].to_i).to_date + 1.day
+    respond_with Installation.where(end_on: start_on..end_on)
   end
 
   def move
@@ -13,5 +12,9 @@ class InstallationsController < ApplicationController
 
   def resize
     render json: Installation.find(params[:id]).resize(params[:days])
+  end
+
+  def drop
+    render json: Installation.find(params[:id]).drop(params[:date])
   end
 end

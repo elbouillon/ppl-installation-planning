@@ -14,10 +14,11 @@
     = render @teams
 
     %h4= t '.installations_to_plan'
-    %ul.nav.nav-tabs.nav-stacked
+    %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
-        %li
+        %li{data: {event_id: i.id, event_title: i.description, event_color: i.team.color}}
           = link_to "#" do
+            %i.icon.icon-move
             = i.description
             .label.label-warning= i.project.try(:name)
             = render i.team

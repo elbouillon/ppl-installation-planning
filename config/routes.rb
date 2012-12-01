@@ -9,4 +9,5 @@ PplInstallationPlanning::Application.routes.draw do
   resources :installations, only: [:index]
   match '/installations/move' => 'installations#move'
   match '/installations/resize' => 'installations#resize'
+  match '/installations/drop' => 'installations#drop'
 end
