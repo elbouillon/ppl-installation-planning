@@ -1,4 +1,24 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+.row-fluid
+  .span8
+    %h1 
+      = t '.title'
+      %small= t '.slogan'
+  .span4
+    = render 'layouts/navigation'
+
+.row-fluid
+  .span9
+    = render 'table'
+  .span3
+    %h4= t '.installations_to_plan'
+    %ul.nav.nav-tabs.nav-stacked
+      - (1..5).each do |n|
+        %li= link_to "A planifier #{n}", "#"
+    %h4= t '.open_projects'
+    %ul.nav.nav-tabs.nav-stacked
+      - @projects.each do |p|
+        %li
+          = link_to "#" do
+            .label.label-success= "#{p[:delivery_on]}"
+            = "#{p[:name]}"
+            .label= "#{p[:planned]} days"

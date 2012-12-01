@@ -1,10 +1,10 @@
-= link_to "Ppl Installation Planning", root_path, :class => 'brand'
-%ul.nav
+%ul.nav.nav-pills
+  %li= link_to t('.add_team'), '#'
   - if user_signed_in?
     %li
-      Logged in as #{current_user.name}
+      = t '.logged_in_as', user_name: current_user.name
     %li
-      = link_to 'Logout', signout_path
+      = link_to t('.logout'), signout_path
   - else
     %li
-      = link_to 'Login', signin_path
+      = link_to t('.login'), signin_path
