@@ -1,5 +1,5 @@
 %table.table.table-striped.table-condensed.table-bordered
-  %head
+  %thead
     %tr
       %th= t '.week'
       %th{colspan: 5} 45
@@ -7,10 +7,10 @@
       %th{colspan: 5} 47
     %tr
       %th= t '.team'
-      - (Date.today.beginning_of_week..2.weeks.from_now.to_date.end_of_week-2).each do |d|
+      - (Date.today.beginning_of_week..2.weeks.from_now.to_date.end_of_week).each do |d|
         - unless (d.wday % 7 == 0) or (d.wday % 7 == 6)
           %th= d.strftime('%d.%m') 
-  %body
+  %tbody
     %tr
       %th Agran 1
       - (1..15).each do |n|

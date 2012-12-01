@@ -12,13 +12,22 @@
   .span3
     %h4= t '.installations_to_plan'
     %ul.nav.nav-tabs.nav-stacked
-      - (1..5).each do |n|
-        %li= link_to "A planifier #{n}", "#"
-    %h4= t '.open_projects'
-    %ul.nav.nav-tabs.nav-stacked
-      - @projects.each do |p|
+      - @installations_to_plan.each do |i|
         %li
           = link_to "#" do
-            .label.label-success= "#{p[:delivery_on]}"
-            = "#{p[:name]}"
-            .label= "#{p[:planned]} days"
+            = i.description
+            .label.label-warning= i.project.try(:name)
+            .label.label-info= i.team.try(:name)
+    %h4= t '.open_projects'
+    %ul.nav.nav-tabs.nav-stacked
+      - @open_projects.each do |p|
+        %li
+          = link_to "#" do
+            .label.label-success= p.delivery
+            = p.name
+            .badge= "#{p.planned} days"
+
+    %h4= t '.closed_projects'
+    %ul.nav.nav-tabs.nav-stacked
+      - @closed_projects.each do |p|
+        %li= p.name
