@@ -20,4 +20,17 @@ class Installation
   def self.to_plan
     where(start_on: nil, end_on: nil)
   end
+
+  def move(nb_days)
+    self.start_on += nb_days.to_i.days
+    self.end_on += nb_days.to_i.days
+    self.save
+    self
+  end
+
+  def resize(nb_days)
+    self.end_on += nb_days.to_i.days
+    self.save
+    self
+  end
 end

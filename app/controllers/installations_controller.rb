@@ -6,4 +6,12 @@ class InstallationsController < ApplicationController
       :end_on.lte => Time.at(params[:end].to_i)
     )
   end
+
+  def move
+    render json: Installation.find(params[:id]).move(params[:days])
+  end
+
+  def resize
+    render json: Installation.find(params[:id]).resize(params[:days])
+  end
 end

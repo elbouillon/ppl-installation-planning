@@ -14,3 +14,9 @@ jQuery ($) ->
     weekends: false
     editable: true
     events: '/installations.json'
+
+    eventDrop: (event, delta) ->
+      $.post '/installations/move', {id: event.id, days: delta}
+
+    eventResize: (event, delta) ->
+      $.post '/installations/resize', {id: event.id, days: delta}

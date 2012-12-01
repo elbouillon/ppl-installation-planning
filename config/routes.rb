@@ -7,4 +7,6 @@ PplInstallationPlanning::Application.routes.draw do
   match '/auth/failure' => 'sessions#failure'
 
   resources :installations, only: [:index]
+  match '/installations/move' => 'installations#move'
+  match '/installations/resize' => 'installations#resize'
 end
