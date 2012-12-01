@@ -10,7 +10,13 @@
   .span8
     #calendar{data: { path: installations_path}}
   .span4
-    %h4= t '.teams'
+    %h4
+      = t '.teams'
+      %small
+        = link_to '#' do
+          %i.icon.icon-plus
+          = t '.add_team'
+        
     = render @teams
 
     %h4= t '.installations_to_plan'

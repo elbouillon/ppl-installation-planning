@@ -1,0 +1,8 @@
+.well
+  .row-fluid
+    .span5.offset4
+      %h1= t '.restricted_area'
+      %p= t '.informations'
+  .row-fluid
+    .span3.offset5
+      = link_to t(".register"), signin_path, class: "btn btn-large btn-primary"

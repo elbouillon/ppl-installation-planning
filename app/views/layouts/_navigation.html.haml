@@ -1,10 +1,5 @@
 %ul.nav.nav-pills
-  %li= link_to t('.add_team'), '#'
-  - if user_signed_in?
-    %li
-      = t '.logged_in_as', user_name: current_user.name
-    %li
-      = link_to t('.logout'), signout_path
-  - else
-    %li
-      = link_to t('.login'), signin_path
+  %li
+    = t '.logged_in_as', user_name: current_user.name
+  %li
+    = link_to t('.logout'), signout_path
