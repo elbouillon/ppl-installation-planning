@@ -1,0 +1,11 @@
+.modal.hide.fade#add_installation
+  = semantic_form_for Installation.new, validate: true, html: { class: 'form-horizontal' } do |i|
+    .modal-header
+      %button.close{type: "button", data: {dismiss: "modal"}} x
+      %h3= t '.add_installation'
+    .modal-body
+      = i.input :description, input_html: { class: 'required' }
+      = i.input :team, input_html: { class: 'required' }
+      = i.input :project
+    .modal-footer
+      = i.action :submit

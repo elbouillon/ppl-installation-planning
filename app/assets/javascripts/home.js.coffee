@@ -1,4 +1,6 @@
 jQuery ($) ->
+  $('select').chosen()
+
   $('#draggable li').draggable
     revert: true
     revertDuration: 0
@@ -32,3 +34,5 @@ jQuery ($) ->
       $.post '/installations/drop', {id: event.id, date: date}
       $('#calendar').fullCalendar('renderEvent', event)
       $(@).remove()
+
+  $('.validable').validate()

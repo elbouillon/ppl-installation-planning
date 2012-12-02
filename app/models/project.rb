@@ -1,4 +1,5 @@
 class Project
+  STATES = [:open, :closed]
   include Mongoid::Document
   field :name, type: String
   field :planned, type: Integer

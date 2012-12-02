@@ -1,5 +1,5 @@
 class InstallationsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
   def index
     start_on = Time.at(params[:start].to_i).to_date - 1.day
     end_on = Time.at(params[:end].to_i).to_date + 1.day
@@ -16,5 +16,10 @@ class InstallationsController < ApplicationController
 
   def drop
     render json: Installation.find(params[:id]).drop(params[:date])
+  end
+
+  def create
+    @i = Installation.new(params[:installation])
+    respond_with @i.save, :location => home_url
   end
 end

@@ -9,17 +9,17 @@
 .row-fluid
   .span8
     #calendar{data: { path: installations_path}}
-  .span4
+  .span4.sidebar
     %h4
       = t '.teams'
-      %small
-        = link_to '#' do
-          %i.icon.icon-plus
-          = t '.add_team'
-        
+      = add_link_to '#', '.add_team'
     = render @teams
 
-    %h4= t '.installations_to_plan'
+    %h4
+      = t '.installations_to_plan'
+      = add_link_to '#add_installation', '.add_installation', data: {toggle: "modal"}
+    = render 'installations/form'
+
     %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
         %li{data: {event_id: i.id, event_title: i.description, event_color: i.team.color}}
@@ -28,12 +28,16 @@
             = i.description
             .label.label-warning= i.project.try(:name)
             = render i.team
-    %h4= t '.open_projects'
+    %h4
+      = t '.open_projects'
+      = add_link_to '#', '.add_project'
+    = render 'projects/form'
+
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|
         %li
           = link_to "#" do
-            .label.label-success= p.delivery
+            .label.label-warning= p.delivery
             = p.name
             .badge= "#{p.planned} days"
 

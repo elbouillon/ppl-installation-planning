@@ -1,4 +1,8 @@
 PplInstallationPlanning::Application.routes.draw do
+  get "projects/index"
+
+  get "projects/create"
+
   root :to => "sessions#register"
   resources :users, :only => [:index, :show, :edit, :update ]
   match '/auth/:provider/callback' => 'sessions#create'
@@ -6,10 +10,12 @@ PplInstallationPlanning::Application.routes.draw do
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/failure' => 'sessions#failure'
 
-  match '/home' => 'home#index'
+  match '/home' => 'home#index', as: :home
 
-  resources :installations, only: [:index]
+  resources :installations, only: [:index, :create]
   match '/installations/move' => 'installations#move'
   match '/installations/resize' => 'installations#resize'
   match '/installations/drop' => 'installations#drop'
+
+  resources :projects, only: [:index, :create]
 end

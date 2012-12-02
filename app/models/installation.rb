@@ -7,6 +7,8 @@ class Installation
   belongs_to :team
   belongs_to :project
 
+  validates :description, :team, presence: true
+
   def as_json(options = {})
     {
       title: "[#{project.try(:name)}] #{description}",
