@@ -12,12 +12,13 @@
   .span4.sidebar
     %h4
       = t '.teams'
-      = add_link_to '#', '.add_team'
+      = add_link_to_modal '#add_team', '.add_team'
     = render @teams
+    = render 'teams/form'
 
     %h4
       = t '.installations_to_plan'
-      = add_link_to '#add_installation', '.add_installation', data: {toggle: "modal"}
+      = add_link_to_modal '#add_installation', '.add_installation'
     = render 'installations/form'
 
     %ul.nav.nav-tabs.nav-stacked#draggable
@@ -30,14 +31,14 @@
             = render i.team
     %h4
       = t '.open_projects'
-      = add_link_to '#', '.add_project'
+      = add_link_to_modal '#add_project', '.add_project'
     = render 'projects/form'
 
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|
         %li
           = link_to "#" do
-            .label.label-warning= p.delivery
+            .label.label-info= p.delivery
             = p.name
             .badge= "#{p.planned} days"
 

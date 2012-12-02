@@ -1,0 +1,12 @@
+.modal.hide.fade#add_project
+  = semantic_form_for Project.new, validate: true, html: { class: 'validable form-horizontal' } do |i|
+    .modal-header
+      %button.close{type: "button", data: {dismiss: "modal"}} x
+      %h3= t '.add_project'
+    .modal-body
+      = i.input :name, input_html: { class: 'required' }
+      = i.input :planned
+      = i.input :state, collection: Project::STATES
+      = i.input :delivery_on, input_html: { class: 'datepicker' }
+    .modal-footer
+      = i.action :submit

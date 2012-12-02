@@ -6,4 +6,6 @@
 //= require fullcalendar
 //= require jquery.validate
 //= require additional-methods
+//= require bootstrap-datepicker
+//= require js/bootstrap-colorpicker
 //= require_tree .

@@ -1,4 +1,12 @@
 PplInstallationPlanning::Application.routes.draw do
+  get "teams/index"
+
+  get "teams/new"
+
+  get "teams/edit"
+
+  get "teams/create"
+
   get "projects/index"
 
   get "projects/create"
@@ -18,4 +26,5 @@ PplInstallationPlanning::Application.routes.draw do
   match '/installations/drop' => 'installations#drop'
 
   resources :projects, only: [:index, :create]
+  resources :teams, only: [:index, :create]
 end

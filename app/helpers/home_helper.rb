@@ -6,4 +6,8 @@ module HomeHelper
       end
     end
   end
+
+  def add_link_to_modal(url, txt)
+    add_link_to url, txt, data: {toggle: "modal"}
+  end
 end

@@ -1,0 +1,10 @@
+.modal.hide.fade#add_team
+  = semantic_form_for Team.new, validate: true, html: { class: 'form-horizontal' } do |i|
+    .modal-header
+      %button.close{type: "button", data: {dismiss: "modal"}} x
+      %h3= t '.add_team'
+    .modal-body
+      = i.input :name, input_html: { class: 'required' }
+      = i.input :color, input_html: { class: 'required colorpicker' }
+    .modal-footer
+      = i.action :submit

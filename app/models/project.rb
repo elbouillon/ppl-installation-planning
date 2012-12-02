@@ -3,7 +3,7 @@ class Project
   include Mongoid::Document
   field :name, type: String
   field :planned, type: Integer
-  field :state, type: String
+  field :state, type: String, default: :open
   field :delivery_on, type: Date
 
   has_many :installations
