@@ -25,4 +25,8 @@ class InstallationsController < InheritedResources::Base
   def update
     update! { home_url }
   end
+
+  def destroy
+    destroy! { home_url }
+  end
 end

@@ -31,9 +31,10 @@
           .label.label-warning= i.project.try(:name)
           = render i.team
           .edit.pull-right
-            = link_to edit_installation_path(i) do
+            = link_to edit_installation_path(i), class: 'tt', title: t('.edit_installation') do
               %i.icon.icon-edit
-              = t '.edit_installation'
+            = link_to installation_path(i), class: 'tt', title: t('.delete_installation'), method: :delete do
+              %i.icon.icon-remove
     %h4
       = t '.open_projects'
       = add_link_to_modal '#add_project', '.add_project'
