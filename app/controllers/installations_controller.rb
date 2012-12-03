@@ -21,4 +21,8 @@ class InstallationsController < InheritedResources::Base
   def create
     create! { home_url }
   end
+
+  def update
+    update! { home_url }
+  end
 end

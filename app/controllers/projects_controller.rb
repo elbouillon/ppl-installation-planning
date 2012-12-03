@@ -1,11 +1,11 @@
-class ProjectsController < ApplicationController
+class ProjectsController < InheritedResources::Base
   respond_to :json, :html
 
-  def index
+  def update
+    update! { home_url }
   end
 
   def create
-    @p = Project.new(params[:project])
-    respond_with @p.save, :location => home_url
+    create! { home_url }
   end
 end

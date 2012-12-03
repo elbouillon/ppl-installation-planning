@@ -15,7 +15,8 @@ class Installation
       start: start_on,
       end: end_on,
       id: id,
-      color: team.color
+      color: team.color,
+      edit_url: Rails.application.routes.url_helpers.edit_installation_path(id)
     }
   end
 
@@ -43,4 +44,7 @@ class Installation
     self
   end
 
+  def form_title
+    self.new_record? ? '.add_installation' : '.update_installation'
+  end
 end

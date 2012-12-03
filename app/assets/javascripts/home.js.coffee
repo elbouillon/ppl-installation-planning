@@ -4,6 +4,7 @@ jQuery ($) ->
   $('.datepicker').datepicker
     weekStart: 1
     todayHighlight: true
+    format: 'yyyy-mm-dd'
 
   $('#draggable li').draggable
     revert: true
@@ -36,7 +37,12 @@ jQuery ($) ->
         color: $(@).data('event_color')
 
       $.post '/installations/drop', {id: event.id, date: date}
-      $('#calendar').fullCalendar('renderEvent', event)
+      $('#calendar').fullCalendar( 'refetchEvents' )
       $(@).remove()
 
+    eventClick: (event, jsEvent, view) ->
+      window.open(event.edit_url, '_self')
+
+
   $('.validable').validate()
+

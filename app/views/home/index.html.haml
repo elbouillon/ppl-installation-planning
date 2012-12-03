@@ -13,32 +13,37 @@
     %h4
       = t '.teams'
       = add_link_to_modal '#add_team', '.add_team'
-    = render @teams
-    = render 'teams/form', team: Team.new
-    #edit_team
+    #teams= render @teams
+    .modal.hide.fade#add_team
+      = render 'teams/form', team: Team.new
 
     %h4
       = t '.installations_to_plan'
       = add_link_to_modal '#add_installation', '.add_installation'
-    = render 'installations/form', installation: Installation.new
+    .modal.hide.fade#add_installation
+      = render 'installations/form', installation: Installation.new
 
     %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
-        %li{data: {event_id: i.id, event_title: i.description, event_color: i.team.color}}
-          = link_to "#" do
-            %i.icon.icon-move
-            = i.description
-            .label.label-warning= i.project.try(:name)
-            = render i.team
+        %li.installation{data: {event_id: i.id, event_title: i.description, event_color: i.team.color}}
+          %i.icon.icon-move
+          = i.description
+          .label.label-warning= i.project.try(:name)
+          = render i.team
+          .edit.pull-right
+            = link_to edit_installation_path(i) do
+              %i.icon.icon-edit
+              = t '.edit_installation'
     %h4
       = t '.open_projects'
       = add_link_to_modal '#add_project', '.add_project'
-    = render 'projects/form', project: Project.new
+    .modal.hide.fade#add_project
+      = render 'projects/form', project: Project.new
 
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|
         %li
-          = link_to "#" do
+          = link_to edit_project_path(p), class: 'tt', title: t('.edit_project') do
             .label.label-info= p.delivery
             = p.name
             .badge= "#{p.planned} days"
@@ -46,4 +51,4 @@
     %h4= t '.closed_projects'
     %ul.nav.nav-tabs.nav-stacked
       - @closed_projects.each do |p|
-        %li= p.name
+        %li= link_to p.name, edit_project_path(p)

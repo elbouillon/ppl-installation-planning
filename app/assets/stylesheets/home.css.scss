@@ -10,3 +10,19 @@
   }
 
 }
+
+.team.label a {
+  color: white;
+  font-weight: normal;
+}
+
+.nav.nav-tabs.nav-stacked li.installation  {
+  border: solid 1px #DDD;
+  border-radius: 4px;
+  padding: 10px;
+  & > .edit {
+    display: inline-block;
+  }
+  i { cursor: pointer; }
+}
+
