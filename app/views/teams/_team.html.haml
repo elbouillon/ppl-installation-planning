@@ -1,1 +1,2 @@
-.label{style: "background-color: #{team.color}"}= team.name
+.label{style: "background-color: #{team.color}"}
+  = link_to team.name, edit_team_path(team)

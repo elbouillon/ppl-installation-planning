@@ -14,12 +14,13 @@
       = t '.teams'
       = add_link_to_modal '#add_team', '.add_team'
     = render @teams
-    = render 'teams/form'
+    = render 'teams/form', team: Team.new
+    #edit_team
 
     %h4
       = t '.installations_to_plan'
       = add_link_to_modal '#add_installation', '.add_installation'
-    = render 'installations/form'
+    = render 'installations/form', installation: Installation.new
 
     %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
@@ -32,7 +33,7 @@
     %h4
       = t '.open_projects'
       = add_link_to_modal '#add_project', '.add_project'
-    = render 'projects/form'
+    = render 'projects/form', project: Project.new
 
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|

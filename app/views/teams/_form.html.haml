@@ -1,5 +1,5 @@
-.modal.hide.fade#add_team
-  = semantic_form_for Team.new, validate: true, html: { class: 'form-horizontal' } do |i|
+.modal#add_team
+  = semantic_form_for team, validate: true, html: { class: 'form-horizontal' } do |i|
     .modal-header
       %button.close{type: "button", data: {dismiss: "modal"}} x
       %h3= t '.add_team'

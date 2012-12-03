@@ -1,5 +1,5 @@
 .modal.hide.fade#add_project
-  = semantic_form_for Project.new, validate: true, html: { class: 'validable form-horizontal' } do |i|
+  = semantic_form_for project, validate: true, html: { class: 'validable form-horizontal' } do |i|
     .modal-header
       %button.close{type: "button", data: {dismiss: "modal"}} x
       %h3= t '.add_project'

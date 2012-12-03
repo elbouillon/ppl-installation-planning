@@ -1,5 +1,5 @@
 .modal.hide.fade#add_installation
-  = semantic_form_for Installation.new, validate: true, html: { class: 'form-horizontal' } do |i|
+  = semantic_form_for installation, validate: true, html: { class: 'form-horizontal' } do |i|
     .modal-header
       %button.close{type: "button", data: {dismiss: "modal"}} x
       %h3= t '.add_installation'

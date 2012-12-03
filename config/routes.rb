@@ -20,11 +20,11 @@ PplInstallationPlanning::Application.routes.draw do
 
   match '/home' => 'home#index', as: :home
 
-  resources :installations, only: [:index, :create]
+  resources :installations
   match '/installations/move' => 'installations#move'
   match '/installations/resize' => 'installations#resize'
   match '/installations/drop' => 'installations#drop'
 
-  resources :projects, only: [:index, :create]
-  resources :teams, only: [:index, :create]
+  resources :projects
+  resources :teams
 end

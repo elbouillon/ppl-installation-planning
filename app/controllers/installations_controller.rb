@@ -1,9 +1,9 @@
-class InstallationsController < ApplicationController
+class InstallationsController < InheritedResources::Base
   respond_to :json, :html
   def index
     start_on = Time.at(params[:start].to_i).to_date - 1.day
     end_on = Time.at(params[:end].to_i).to_date + 1.day
-    respond_with Installation.where(end_on: start_on..end_on)
+    respond_with Installation.where(end_on: start_on..end_on).includes(:team)
   end
 
   def move
@@ -19,7 +19,6 @@ class InstallationsController < ApplicationController
   end
 
   def create
-    @i = Installation.new(params[:installation])
-    respond_with @i.save, :location => home_url
+    create! { home_url }
   end
 end
