@@ -1,6 +1,5 @@
 jQuery ($) ->
   $('.colorpicker').colorpicker()
-  $('select').chosen()
   $('.datepicker').datepicker
     weekStart: 1
     todayHighlight: true

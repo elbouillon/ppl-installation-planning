@@ -20,7 +20,7 @@
     %h4
       = t '.installations_to_plan'
       = add_link_to_modal '#add_installation', '.add_installation'
-    .modal.hide.fade#add_installation
+    .modal.hide.fade#add_installation{data: {width: 900}}
       = render 'installations/form', installation: Installation.new
 
     %ul.nav.nav-tabs.nav-stacked#draggable

@@ -27,6 +27,5 @@ gem "formtastic"
 gem 'formtastic-bootstrap'
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
-gem "chosen-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'inherited_resources'

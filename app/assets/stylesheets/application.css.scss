@@ -1,9 +1,9 @@
 /*
- *= require_self
  *= require fullcalendar
- *= require_tree .
  *= require formtastic-bootstrap
  *= require bootstrap-datepicker
  *= require css/colorpicker
- *= require chosen
+ *= require_tree .
+ *= require bootstrap-modal
+ *= require_self
 */

@@ -1,9 +1,9 @@
-= semantic_form_for installation, validate: true, html: { class: 'form-horizontal' } do |i|
+= semantic_form_for installation, html: { class: 'validable form-horizontal' } do |i|
   .modal-header
     %button.close{type: "button", data: {dismiss: "modal"}} x
     %h3= t installation.form_title
   .modal-body
-    = i.input :description, input_html: { class: 'required' }
+    = i.input :description, input_html: { class: 'span8 required' }
     = i.input :team, input_html: { class: 'required' }
     = i.input :project
   .modal-footer
