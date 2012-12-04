@@ -1,5 +1,6 @@
 class Installation
   include Mongoid::Document
+  include Ppl::Document
   field :start_on, type: Date
   field :end_on, type: Date
   field :description, type: String
@@ -42,9 +43,5 @@ class Installation
     self.end_on = start_on
     self.save
     self
-  end
-
-  def form_title
-    self.new_record? ? '.add_installation' : '.update_installation'
   end
 end

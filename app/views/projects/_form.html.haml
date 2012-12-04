@@ -1,7 +1,7 @@
 = semantic_form_for project, validate: true, html: { class: 'validable form-horizontal' } do |i|
   .modal-header
     %button.close{type: "button", data: {dismiss: "modal"}} x
-    %h3= t '.add_project'
+    %h3= t project.form_title
   .modal-body
     = i.input :name, input_html: { class: 'required' }
     = i.input :planned, prepend: t('.day')
