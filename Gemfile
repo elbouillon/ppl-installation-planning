@@ -21,11 +21,13 @@ gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem "less-rails", ">= 2.2.6", :group => :assets
 gem "twitter-bootstrap-rails", "~> 2.1", :group => :assets
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
-gem "omniauth", ">= 1.1.1"
-gem "omniauth-google-oauth2"
 gem "formtastic"
 gem 'formtastic-bootstrap'
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'bootstrap-datepicker-rails'
 gem 'inherited_resources'
+
+gem 'devise'
+gem 'omniauth-openid'
+gem 'omniauth-google-apps'

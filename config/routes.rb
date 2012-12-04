@@ -1,24 +1,13 @@
 PplInstallationPlanning::Application.routes.draw do
-  get "teams/index"
+  root :to => "home#index"
 
-  get "teams/new"
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  get "teams/edit"
+  devise_scope :user do
+    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 
-  get "teams/create"
-
-  get "projects/index"
-
-  get "projects/create"
-
-  root :to => "sessions#register"
-  resources :users, :only => [:index, :show, :edit, :update ]
-  match '/auth/:provider/callback' => 'sessions#create'
-  match '/signin' => 'sessions#new', :as => :signin
-  match '/signout' => 'sessions#destroy', :as => :signout
-  match '/auth/failure' => 'sessions#failure'
-
-  match '/home' => 'home#index', as: :home
 
   resources :installations
   match '/installations/move' => 'installations#move'
