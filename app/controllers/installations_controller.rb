@@ -19,14 +19,14 @@ class InstallationsController < InheritedResources::Base
   end
 
   def create
-    create! { home_url }
+    create! { root_url }
   end
 
   def update
-    update! { home_url }
+    update! { root_url }
   end
 
   def destroy
-    destroy! { home_url }
+    destroy! { root_url }
   end
 end
