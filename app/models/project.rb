@@ -9,7 +9,7 @@ class Project
 
   has_many :installations
 
-  scope :open, where(state: :open)
+  scope :active, where(state: :open)
   scope :closed, where(state: :closed)
 
   def delivery
