@@ -32,4 +32,6 @@ gem 'devise'
 gem 'omniauth-openid'
 gem 'omniauth-google-apps'
 
-gem 'phrase'
+group :staging, :development do
+  gem 'phrase'
+end
