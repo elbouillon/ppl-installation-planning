@@ -1,7 +1,9 @@
 class Project
   STATES = [:open, :closed]
+
   include Mongoid::Document
   include Ppl::Document
+
   field :name, type: String
   field :planned, type: Integer
   field :state, type: String, default: :open
