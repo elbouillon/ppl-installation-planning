@@ -1,0 +1,61 @@
+---
+fr-CH:
+  devise:
+    failure:
+      user:
+        unauthenticated: Vous devez vous connecter pour utiliser l'application. Merci
+          beacoup !
+    sessions:
+      new:
+        sign_in: PPL Planning
+        login_info: Tu prévois ou tu t'en vas!
+    shared:
+      links:
+        signin_with_google_apps: Se connecter avec mon compte google
+    omniauth_callbacks:
+      success: Connexion réussie, maintenant au travail!
+  home:
+    index:
+      teams: Equipes de pose
+      open_projects: Projets ouverts
+      installations_to_plan: Travaux à planifier
+      slogan: Tu prévois ou tu t'en vas!
+      add_project: Ajouter
+      title: PPL Planning
+      add_team: Ajouter
+      add_installation: AJouter
+  layouts:
+    navigation:
+      logged_in_as: Connecté en tant que  %{user_name}
+      logout: Quitter (non mais t'es pas fou!)
+  formtastic:
+    hints:
+      project:
+        project:
+          edit:
+            delivery_on: Permet de donner une indication de planification des travaux
+              liés
+            name: Un nom significatif (comme dans Feng c'est très bien)
+      team:
+        team:
+          edit:
+            color: Permet de différencier l'équipe dans le calendrier
+    actions:
+      project:
+        project:
+          edit:
+            update: Mettre à jour
+      team:
+        team:
+          edit:
+            update: Mettre à jour
+    labels:
+      team:
+        team:
+          edit:
+            color: Couleur
+            name: Nom
+  flash:
+    teams:
+      update:
+        notice_html: Equipe modifiée avec succés

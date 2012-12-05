@@ -31,3 +31,5 @@ gem 'inherited_resources'
 gem 'devise'
 gem 'omniauth-openid'
 gem 'omniauth-google-apps'
+
+gem 'phrase'
