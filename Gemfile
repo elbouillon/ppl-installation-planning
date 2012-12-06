@@ -14,6 +14,7 @@ end
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0", :group => [:development, :test]
 #gem "unicorn", ">= 4.3.1", :group => :production
+gem 'nginx', :group => :production
 #gem "pg", ">= 0.14.1"
 gem "mongoid", "~> 3.0.0"
 gem "haml", ">= 3.1.7"
