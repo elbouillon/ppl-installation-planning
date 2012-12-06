@@ -13,9 +13,6 @@ end
 
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0", :group => [:development, :test]
-#gem "unicorn", ">= 4.3.1", :group => :production
-gem 'nginx', :group => :production
-#gem "pg", ">= 0.14.1"
 gem "mongoid", "~> 3.0.0"
 gem "haml", ">= 3.1.7"
 gem "formtastic"
@@ -38,9 +35,6 @@ group :development do
   gem "hpricot", ">= 0.8.6"
   gem "ruby_parser", ">= 3.0.1"
   gem "quiet_assets", ">= 1.0.1"
-end
-
-group :development do
   gem "capybara", ">= 1.1.3"
   gem "minitest-spec-rails", ">= 3.0.7"
   gem "minitest-wscolor", ">= 0.0.3"
