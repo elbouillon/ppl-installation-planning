@@ -12,7 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-#gem "thin", ">= 1.5.0", :group => [:development, :test]
+gem "thin", ">= 1.5.0"
 gem "mongoid", "~> 3.0.0"
 gem "haml", ">= 3.1.7"
 gem "formtastic"
