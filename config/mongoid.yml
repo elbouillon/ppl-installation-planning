@@ -69,17 +69,10 @@ test:
 production:
   sessions:
     default:
-      database: ppl_planning_prod
-      # Provides the hosts the default session can connect to. Must be an array
-      # of host:port pairs. (required)
-      hosts:
-        - localhost:27017
-      consistency: :strong
+      uri: <%= ENV['MONGOHQ_URL'] %>
   options:
-    # Configuration for whether or not to allow access to fields that do
-    # not have a field definition on the model. (default: true)
-    # allow_dynamic_fields: true
-
-    # Enable the identity map, needed for eager loading. (default: false)
+    max_retries_on_connection_failure: 20
+    persist_in_safe_mode: true
+    skip_version_check: true
     identity_map_enabled: true
 
