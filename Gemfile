@@ -24,6 +24,8 @@ gem 'devise'
 gem 'omniauth-openid'
 gem 'omniauth-google-apps'
 
+gem 'nginx', group: :production
+
 group :staging, :development do
   gem 'phrase'
 end
