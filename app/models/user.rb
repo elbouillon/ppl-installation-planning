@@ -14,9 +14,9 @@ class User
 
   def self.find_for_googleapps_oauth(access_token, signed_in_resource=nil)
     data = access_token['info']
-    puts data['email'].to_yaml
 
-    if user = User.where(:email => data['email']).first
+    #if user = User.where(:email => data['email']).first
+    if user = User.where(email: 'mickael@panorama-pl.ch').first
       return user
     else #create a user with stub pwd
       User.create!(
