@@ -1,4 +1,0 @@
-engine=rails3
-addons=(mongodb)
-dns_alias='ppl-planning'
-skipdb=true
