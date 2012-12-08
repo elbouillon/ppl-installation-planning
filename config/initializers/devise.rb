@@ -207,7 +207,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require 'openid/store/filesystem'
-  config.omniauth :google_apps, :store => OpenID::Store::Filesystem.new('/tmp'), :domain => 'panorama-pl.ch'
+  #require 'openid/store/memcache'
+  config.omniauth :google_apps, :store => OpenID::Store::Filesystem.new('./tmp'), :domain => 'panorama-pl.ch'
+  #config.omniauth :google_apps, store: OpenID::Store::Memcache.new(Dalli::Client.new), :domain => 'panorama-pl.ch'
   #config.omniauth :google_apps, nil, :domain => 'panorama-pl.ch'
 
   # ==> Warden configuration
