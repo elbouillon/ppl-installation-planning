@@ -15,4 +15,4 @@
         = yield
         %footer
 
-  = phrase_javascript("ad5b745a59550b714cf07aa25a0f25b1") if Rails.env.development? && params['translate']
+  = phrase_javascript("ad5b745a59550b714cf07aa25a0f25b1") if Rails.env.development? && session['translate']
