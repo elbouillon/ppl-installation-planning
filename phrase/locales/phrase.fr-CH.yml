@@ -24,10 +24,14 @@ fr-CH:
       title: PPL Planning
       add_team: Ajouter
       add_installation: AJouter
+      closed_projects: Projets terminés
+      edit_installation: Modifier
+      delete_installation: Supprimer
+      edit_project: Mettre à jour
   layouts:
     navigation:
-      logged_in_as: Connecté en tant que  %{user_name}
-      logout: Quitter (non mais t'es pas fou!)
+      logged_in_as: Yo %{user_name}
+      logout: Quitter
   formtastic:
     hints:
       project:
@@ -36,10 +40,15 @@ fr-CH:
             delivery_on: Permet de donner une indication de planification des travaux
               liés
             name: Un nom significatif (comme dans Feng c'est très bien)
+            planned: Indiquer le nombre de jours prévus pour faire les travaux
       team:
         team:
           edit:
             color: Permet de différencier l'équipe dans le calendrier
+      installation:
+        installation:
+          edit:
+            description: Mettre un résumé - le plus complet possible
     actions:
       project:
         project:
@@ -49,13 +58,47 @@ fr-CH:
         team:
           edit:
             update: Mettre à jour
+      installation:
+        installation:
+          edit:
+            update: Modifier
     labels:
       team:
         team:
           edit:
             color: Couleur
             name: Nom
+      project:
+        project:
+          edit:
+            name: Nom
+            planned: Planification
+            state: Etat
+            delivery_on: Livraison
+      installation:
+        installation:
+          edit:
+            description: Description
+            team: Equipe
+            project: Projet
+    placeholders:
+      project:
+        project:
+          edit:
+            name: Nom
   flash:
     teams:
       update:
         notice_html: Equipe modifiée avec succés
+  projects:
+    form:
+      update_project: Mettre à jour le projet
+      day: Jours
+  teams:
+    form:
+      update_team: Mettre à jour l'équipe
+    team:
+      edit: Modifier équipe
+  installations:
+    form:
+      update_installation: Modifier le travail
