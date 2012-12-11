@@ -10,6 +10,8 @@ jQuery ($) ->
     revertDuration: 0
 
   $('#calendar').fullCalendar
+    monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre']
+    dayNamesShort: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi']
     header:
       left: 'prev,next today'
       center: 'title'
