@@ -45,7 +45,7 @@
       - @open_projects.each do |p|
         %li
           = link_to edit_project_path(p), class: 'tt', title: t('.edit_project') do
-            .label.label-info= p.delivery
+            .label.label-info= p.delivery if p.delivery
             = p.name
             .badge= "#{p.planned} days"
 

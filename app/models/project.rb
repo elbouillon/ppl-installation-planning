@@ -15,6 +15,6 @@ class Project
   scope :closed, where(state: :closed)
 
   def delivery
-    delivery_on.strftime("%y.%W")
+    delivery_on.strftime("%y.%W") if delivery_on
   end
 end
