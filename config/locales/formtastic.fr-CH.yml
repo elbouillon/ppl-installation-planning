@@ -1,0 +1,55 @@
+fr-CH:
+  formtastic:
+    hints:
+      project:
+        project:
+          edit:
+            delivery_on: Permet de donner une indication de planification des travaux
+              liés
+            name: Un nom significatif (comme dans Feng c'est très bien)
+            planned: Indiquer le nombre de jours prévus pour faire les travaux
+      team:
+        team:
+          edit:
+            color: Permet de différencier l'équipe dans le calendrier
+      installation:
+        installation:
+          edit:
+            description: Mettre un résumé - le plus complet possible
+    actions:
+      project:
+        project:
+          edit:
+            update: Mettre à jour
+      team:
+        team:
+          edit:
+            update: Mettre à jour
+      installation:
+        installation:
+          edit:
+            update: Modifier
+    labels:
+      team:
+        team:
+          edit:
+            color: Couleur
+            name: Nom
+      project:
+        project:
+          edit:
+            name: Nom
+            planned: Planification
+            state: Etat
+            delivery_on: Livraison
+      installation:
+        installation:
+          edit:
+            description: Description
+            team: Equipe
+            project: Projet
+    placeholders:
+      project:
+        project:
+          edit:
+            name: Nom

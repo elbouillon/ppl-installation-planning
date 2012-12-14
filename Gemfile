@@ -25,10 +25,6 @@ gem 'devise'
 gem 'omniauth-openid'
 gem 'omniauth-google-apps'
 
-group :staging, :development do
-  gem 'phrase'
-end
-
 group :development do
   gem "factory_girl_rails", ">= 4.1.0"
   gem "hub", ">= 1.10.2", :require => nil
