@@ -1,0 +1,5 @@
+= link_to project_path(project), class: 'tt', title: t('.show_project') do
+  - if project.delivery
+    .label.label-info= project.delivery
+  = project.name
+  .badge= "#{project.planned} days"

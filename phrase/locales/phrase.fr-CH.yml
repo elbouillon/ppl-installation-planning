@@ -21,9 +21,9 @@ fr-CH:
       installations_to_plan: Travaux à planifier
       slogan: Tu prévois ou tu t'en vas!
       add_project: Ajouter
-      title: PPL Planning
+      title: PPL Planificator
       add_team: Ajouter
-      add_installation: AJouter
+      add_installation: Ajouter
       closed_projects: Projets terminés
       edit_installation: Modifier
       delete_installation: Supprimer
@@ -94,6 +94,9 @@ fr-CH:
     form:
       update_project: Mettre à jour le projet
       day: Jours
+    project:
+      edit_project: Modifier
+      show_project: Voir le projet
   teams:
     form:
       update_team: Mettre à jour l'équipe
@@ -102,3 +105,70 @@ fr-CH:
   installations:
     form:
       update_installation: Modifier le travail
+    show:
+      edit: Modifier
+      title: Information sur le travail
+  date:
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec la confirmation
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      record_invalid: ! 'La validation a échoué : %{errors}'
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: ! 'Veuillez vérifier les champs suivants : '
+      header:
+        one: ! 'Impossible d''enregistrer ce %{model} : 1 erreur'
+        other: ! 'Impossible d''enregistrer ce %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un %{model}
+      submit: Enregistrer ce %{model}
+      update: Modifier ce %{model}
+  support:
+    array:
+      last_word_connector: ! ' et '
+      two_words_connector: ! ' et '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%d. %B %Y %H:%M'
+      long: ! '%A, %d. %B %Y %H:%M:%S %Z'
+      short: ! '%d. %b %H:%M'
+    pm: pm
+  activemodel:
+    errors: ''
+  activerecord:
+    errors: ''
+  back: Annuler et revenir en arrière

@@ -19,9 +19,7 @@
 
     %h4
       = t '.installations_to_plan'
-      = add_link_to_modal '#add_installation', '.add_installation'
-    .modal.hide.fade#add_installation{data: {width: 900}}
-      = render 'installations/form', installation: Installation.new
+      = link_to t('.add_installation'), new_installation_path
 
     %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
@@ -43,11 +41,7 @@
 
     %ul.nav.nav-tabs.nav-stacked
       - @open_projects.each do |p|
-        %li
-          = link_to edit_project_path(p), class: 'tt', title: t('.edit_project') do
-            .label.label-info= p.delivery if p.delivery
-            = p.name
-            .badge= "#{p.planned} days"
+        %li= render p
 
     %h4= t '.closed_projects'
     %ul.nav.nav-tabs.nav-stacked
