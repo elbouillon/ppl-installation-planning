@@ -1,0 +1,22 @@
+%h1
+  Projet
+  = @project.name
+  - if @project.delivery
+    .label.label-info= @project.delivery
+  %small= link_to t('.edit'), edit_project_path(@project)
+
+%dl
+  %dt Nb jours planifie
+  %dd= @project.planned
+
+%h2 liste des travaux à planifier
+
+%ul
+  - @project.installations.to_plan.each do |i|
+    %li= i.description
+
+%h2 liste des travaux terminés
+
+%ul
+  - @project.installations.past.each do |i|
+    %li= i.description

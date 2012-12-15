@@ -1,6 +1,7 @@
 class Installation
   include Mongoid::Document
   include Ppl::Document
+
   field :start_on, type: Date
   field :end_on, type: Date
   field :description, type: String
@@ -21,9 +22,8 @@ class Installation
     }
   end
 
-  def self.to_plan
-    where(start_on: nil, end_on: nil)
-  end
+  scope :to_plan, where(start_on: nil, end_on: nil)
+  scope :past, -> { lt(end_on: Date.today) }
 
   def move(nb_days)
     self.start_on += nb_days.to_i.days

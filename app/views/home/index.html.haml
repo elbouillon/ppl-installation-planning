@@ -12,14 +12,14 @@
   .span4.sidebar
     %h4
       = t '.teams'
-      = add_link_to_modal '#add_team', '.add_team'
+      -#= add_link_to_modal '#add_team', '.add_team'
     #teams= render @teams
     .modal.hide.fade#add_team
       = render 'teams/form', team: Team.new
 
     %h4
       = t '.installations_to_plan'
-      = link_to t('.add_installation'), new_installation_path
+      = add_link_to 'installation'
 
     %ul.nav.nav-tabs.nav-stacked#draggable
       - @installations_to_plan.each do |i|
@@ -35,7 +35,7 @@
               %i.icon.icon-remove
     %h4
       = t '.open_projects'
-      = add_link_to_modal '#add_project', '.add_project'
+      = add_link_to 'project'
     .modal.hide.fade#add_project
       = render 'projects/form', project: Project.new
 
@@ -46,4 +46,4 @@
     %h4= t '.closed_projects'
     %ul.nav.nav-tabs.nav-stacked
       - @closed_projects.each do |p|
-        %li= link_to p.name, edit_project_path(p)
+        %li= link_to p.name, project_path(p)
