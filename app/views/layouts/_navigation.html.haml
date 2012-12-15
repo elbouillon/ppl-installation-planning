@@ -1,5 +1,12 @@
-%ul.nav.nav-pills
-  %li
-    = t '.logged_in_as', user_name: current_user.name
-  %li
-    = link_to t('.logout'), destroy_user_session_path
+- if user_signed_in?
+  #user-nav.navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container-fluid
+        =link_to "PPL Planificator", root_path, class: "brand"
+        %ul.nav.pull-right
+          %li
+            = t '.logged_in_as', user_name: current_user.name
+          %li
+            =link_to destroy_user_session_path do
+              %i.icon.icon-share-alt
+              = t('.logout')
