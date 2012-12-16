@@ -1,4 +1,5 @@
 class Installation
+  STATES = %w(to_plan planned open to_charge finished)
   include Mongoid::Document
   include Ppl::Document
 
@@ -6,11 +7,14 @@ class Installation
   field :end_on, type: Date
   field :description, type: String
   field :note, type: String
+  field :state, type: String, default: :to_plan
 
   belongs_to :team
   belongs_to :project
 
   validates :description, :team, presence: true
+
+  before_save :change_state
 
   def as_json(options = {})
     {
@@ -44,5 +48,13 @@ class Installation
     self.end_on = start_on
     self.save
     self
+  end
+
+  private
+
+  def change_state
+    if (start_on && end_on) && state == "to_plan"
+      self.state = :planned
+    end
   end
 end

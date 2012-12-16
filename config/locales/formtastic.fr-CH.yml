@@ -14,26 +14,15 @@ fr-CH:
       installation:
         installation:
           edit:
+            state: Indique l'avancement du travail pour la gestion
             description: Mettre un résumé - le plus complet possible
     actions:
-      project:
-        project:
-          edit:
-            update: Mettre à jour
-      team:
-        team:
-          edit:
-            update: Mettre à jour
-      installation:
-        installation:
-          edit:
-            update: Modifier
+      update: Mettre à jour
+
     labels:
       team:
-        team:
-          edit:
-            color: Couleur
-            name: Nom
+        color: Couleur
+        name: Nom
       project:
         project:
           name: Nom
@@ -42,6 +31,7 @@ fr-CH:
           delivery_on: Livraison
       installation:
         installation:
+          state: Etat
           description: Description
           team: Equipe
           project: Projet

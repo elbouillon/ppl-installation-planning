@@ -3,10 +3,11 @@
     - if installation.project
       = render installation.project
     %h3.description
+      .label.label-info= installation.state
       = render installation.team
       = installation.description
 
-    .note= installation.note.html_safe
+    .note= installation.note.try(:html_safe)
 
   .span6
     %pre Il faut que le calendrier soit centré sur la date du travail et peut-être affiché en format semaine ?

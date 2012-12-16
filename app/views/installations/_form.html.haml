@@ -1,6 +1,7 @@
 = semantic_form_for @installation, html: { class: 'validable form-horizontal' } do |i|
   %h3= t @installation.form_title
   = i.input :description, input_html: { class: 'span8 required' }
+  = i.input :state, collection: Installation::STATES
   = i.input :team, input_html: { class: 'required' }
   = i.input :project
   = i.input :note, as: :text, input_html: { class: 'span8 redactor' }
