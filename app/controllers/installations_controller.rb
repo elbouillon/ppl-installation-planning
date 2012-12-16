@@ -1,5 +1,6 @@
 class InstallationsController < InheritedResources::Base
   respond_to :json, :html
+
   def index
     start_on = Time.at(params[:start].to_i).to_date - 1.day
     end_on = Time.at(params[:end].to_i).to_date + 1.day

@@ -1,9 +1,5 @@
 = semantic_form_for team, validate: true, html: { class: 'form-horizontal' } do |i|
-  .modal-header
-    %button.close{type: "button", data: {dismiss: "modal"}} x
-    %h3= t(team.form_title)
-  .modal-body
-    = i.input :name, input_html: { class: 'required' }
-    = i.input :color, input_html: { class: 'required colorpicker' }
-  .modal-footer
-    = i.action :submit
+  %h3= t(team.form_title)
+  = i.input :name, input_html: { class: 'required' }
+  = i.input :color, input_html: { class: 'required colorpicker' }
+  = i.action :submit

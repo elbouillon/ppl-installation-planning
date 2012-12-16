@@ -4,10 +4,8 @@
   .span4.sidebar
     %h4
       = t '.teams'
-      -#= add_link_to_modal '#add_team', '.add_team'
+      = add_link_to 'team'
     #teams= render @teams
-    .modal.hide.fade#add_team
-      = render 'teams/form', team: Team.new
 
     %h4
       = t '.installations_to_plan'
