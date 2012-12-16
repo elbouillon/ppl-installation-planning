@@ -37,6 +37,7 @@ fr-CH:
       edit: Modifier équipe
   installations:
     form:
+      add_installation: Ajouter un travail
       update_installation: Modifier le travail
     show:
       edit: Modifier
