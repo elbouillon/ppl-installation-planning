@@ -23,10 +23,6 @@ class InstallationsController < InheritedResources::Base
     create! { root_url }
   end
 
-  def update
-    update! { root_url }
-  end
-
   def destroy
     destroy! { root_url }
   end
