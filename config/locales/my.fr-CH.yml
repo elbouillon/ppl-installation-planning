@@ -23,6 +23,7 @@ fr-CH:
         notice_html: Equipe modifiée avec succés
   projects:
     form:
+      add_project: Ajouter un projet
       update_project: Mettre à jour le projet
       day: Jours
     project:
@@ -32,6 +33,7 @@ fr-CH:
     form:
       update_team: Mettre à jour l'équipe
     team:
+      show: Voir
       edit: Modifier équipe
   installations:
     form:
@@ -39,15 +41,3 @@ fr-CH:
     show:
       edit: Modifier
       title: Information sur le travail
-  helpers:
-    select:
-      prompt: Veuillez sélectionner
-    submit:
-      create: Créer un %{model}
-      submit: Enregistrer ce %{model}
-      update: Modifier ce %{model}
-  support:
-    array:
-      last_word_connector: ! ' et '
-      two_words_connector: ! ' et '
-      words_connector: ! ', '

@@ -3,6 +3,7 @@
   = @project.name
   - if @project.delivery
     .label.label-info= @project.delivery
+  .label.label-warning= @project.state
   %small= link_to t('.edit'), edit_project_path(@project)
 
 %dl

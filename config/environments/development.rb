@@ -1,3 +1,5 @@
+require 'i18n/missing_translations'
+
 PplInstallationPlanning::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -31,7 +33,7 @@ PplInstallationPlanning::Application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
-
+  config.app_middleware.use(I18n::MissingTranslations)
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

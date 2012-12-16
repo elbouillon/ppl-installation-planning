@@ -1,5 +1,8 @@
-= render installation.project
+- if installation.project
+  = render installation.project
+
 = installation.description
+
 %h3= t '.periode'
 = t('.start')
 = distance_of_time_in_words_to_now installation.start_on

@@ -3,11 +3,10 @@ fr-CH:
     hints:
       project:
         project:
-          edit:
-            delivery_on: Permet de donner une indication de planification des travaux
-              liés
-            name: Un nom significatif (comme dans Feng c'est très bien)
-            planned: Indiquer le nombre de jours prévus pour faire les travaux
+          delivery_on: Permet de donner une indication de planification des travaux
+            liés
+          name: Un nom significatif (comme dans Feng c'est très bien)
+          planned: Indiquer le nombre de jours prévus pour faire les travaux
       team:
         team:
           edit:
@@ -37,17 +36,15 @@ fr-CH:
             name: Nom
       project:
         project:
-          edit:
-            name: Nom
-            planned: Planification
-            state: Etat
-            delivery_on: Livraison
+          name: Nom
+          planned: Planification
+          state: Etat
+          delivery_on: Livraison
       installation:
         installation:
-          edit:
-            description: Description
-            team: Equipe
-            project: Projet
+          description: Description
+          team: Equipe
+          project: Projet
     placeholders:
       project:
         project:

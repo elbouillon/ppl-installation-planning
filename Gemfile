@@ -35,4 +35,5 @@ group :development do
   gem "capybara", ">= 1.1.3"
   gem "minitest-spec-rails", ">= 3.0.7"
   gem "minitest-wscolor", ">= 0.0.3"
+  gem 'i18n-missing_translations', git: 'git://github.com/svenfuchs/i18n-missing_translations.git'
 end
