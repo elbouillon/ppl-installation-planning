@@ -10,6 +10,7 @@ group :assets do
   gem "less-rails", ">= 2.2.6"
   gem "twitter-bootstrap-rails", "~> 2.1"
   gem "therubyracer", ">= 0.10.2", :platform => :ruby
+  gem 'redactor-rails'
 end
 
 gem 'jquery-rails'

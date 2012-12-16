@@ -1,10 +1,13 @@
-- if installation.project
-  = render installation.project
+.row-fluid
+  .span6
+    - if installation.project
+      = render installation.project
+    %h3.description
+      = render installation.team
+      = installation.description
 
-= installation.description
+    .note= installation.note.html_safe
 
-%h3= t '.periode'
-= t('.start')
-= distance_of_time_in_words_to_now installation.start_on
-= t('.end')
-= distance_of_time_in_words installation.start_on, installation.end_on
+  .span6
+    %pre Il faut que le calendrier soit centré sur la date du travail et peut-être affiché en format semaine ?
+    #calendar{data: { path: installations_path}}

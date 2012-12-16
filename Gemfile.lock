@@ -170,6 +170,9 @@ GEM
     rake (10.0.2)
     rdoc (3.12)
       json (~> 1.4)
+    redactor-rails (0.3.2)
+      mime-types
+      orm_adapter
     responders (0.9.3)
       railties (~> 3.1)
     ruby-openid (2.2.2)
@@ -244,6 +247,7 @@ DEPENDENCIES
   omniauth-openid
   quiet_assets (>= 1.0.1)
   rails (= 3.2.8)
+  redactor-rails
   ruby_parser (>= 3.0.1)
   sass-rails (~> 3.2.3)
   therubyracer (>= 0.10.2)

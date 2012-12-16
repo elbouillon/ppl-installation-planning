@@ -5,6 +5,7 @@ class Installation
   field :start_on, type: Date
   field :end_on, type: Date
   field :description, type: String
+  field :note, type: String
 
   belongs_to :team
   belongs_to :project

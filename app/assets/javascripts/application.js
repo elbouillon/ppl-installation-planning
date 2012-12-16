@@ -21,4 +21,7 @@
 //= require bootstrap-datepicker
 //= require js/bootstrap-colorpicker
 //= require bootstrap-modal
+//
+//= require redactor-rails
+//
 //= require_tree .

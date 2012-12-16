@@ -3,5 +3,6 @@
   = i.input :description, input_html: { class: 'span8 required' }
   = i.input :team, input_html: { class: 'required' }
   = i.input :project
+  = i.input :note, as: :text, input_html: { class: 'span8 redactor' }
   = i.action :submit
   = link_to t('back'), :back, class: "btn btn-warning"
