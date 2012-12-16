@@ -18,7 +18,7 @@ class Installation
       end: end_on,
       id: id,
       color: team.color,
-      url: Rails.application.routes.url_helpers.installation_path(id)
+      show_url: Rails.application.routes.url_helpers.installation_path(id)
     }
   end
 

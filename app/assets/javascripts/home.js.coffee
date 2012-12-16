@@ -42,7 +42,7 @@ jQuery ($) ->
       $(@).remove()
 
     eventClick: (event, jsEvent, view) ->
-      window.open(event.url, '_self')
+      window.open(event.show_url, '_self')
 
 
   $('.validable').validate()
