@@ -207,7 +207,25 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require 'openid/store/filesystem'
-  config.omniauth :google_apps, :store => OpenID::Store::Filesystem.new('./tmp'), :domain => 'panorama-pl.ch'
+  #config.omniauth :google_apps, :store => OpenID::Store::Filesystem.new('./tmp'), :domain => 'panorama-pl.ch'
+  scopes = [
+    "http(s)://www.google.com/calendar/feeds/",
+    "https://www.google.com/m8/feeds/"
+  ]
+  #http://rubydoc.info/gems/omniauth-googlefederated/0.1.2/frames
+  #require "omniauth-googlefederated"
+  config.omniauth :GoogleFederated,
+      #full_host: "http://localhost:3000",
+      store: OpenID::Store::Filesystem.new('/tmp'),
+      name: 'GoogleFederated',
+      identifier: 'https://www.google.com/accounts/o8/id',
+      consumer_key: "panorama-pl.ch",
+      #:consumer_key => "797739037411.apps.googleusercontent.com",
+      consumer_secret: "xRkGxSVTuW04Vgln617Gpelc",
+      #:consumer_secret => "4vjKX99cq29sHtSMYkmYDJpz",
+      scope: scopes,
+      require: 'omniauth-googlefederated'
+      #:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

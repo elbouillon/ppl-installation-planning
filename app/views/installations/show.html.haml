@@ -4,3 +4,5 @@
     = link_to t('.edit'), edit_installation_path(@installation)
 
 = render @installation
+
+= @access_token.get('http://docs.google.com/feeds/documents/private/full').to_xml

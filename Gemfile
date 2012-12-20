@@ -24,7 +24,10 @@ gem 'inherited_resources'
 
 gem 'devise'
 gem 'omniauth-openid'
-gem 'omniauth-google-apps'
+#gem 'omniauth-google-apps'
+gem 'omniauth-oauth'
+gem 'omniauth-googlefederated'
+
 
 group :development do
   gem "factory_girl_rails", ">= 4.1.0"
